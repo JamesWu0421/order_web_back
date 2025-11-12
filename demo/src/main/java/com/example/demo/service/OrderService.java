@@ -45,4 +45,9 @@ public class OrderService {
     public void deleteOrder(Integer id) {
         orderRepository.deleteById(id);
     }
+
+    public Order getLatestOrder() {
+        // findTopByOrderByIdDesc() 回傳 Optional<Order>
+        return orderRepository.findTopByOrderByIdDesc().orElse(null);
+    }
 }

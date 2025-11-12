@@ -20,7 +20,7 @@ import com.example.demo.service.OrderService;
 
 @RestController
 @RequestMapping("/api/orders")
-@CrossOrigin(origins = "*")
+@CrossOrigin(origins = "http://localhost:5173")
 public class OrderController {
 
     @Autowired
@@ -32,7 +32,7 @@ public class OrderController {
     }
 
     // 查單筆
-    @GetMapping("/{id}")
+    @GetMapping("/by-id/{id}")
     public Optional<Order> getOrderById(@PathVariable Integer id) {
         return orderService.getOrderById(id);
     }
@@ -53,6 +53,13 @@ public class OrderController {
     @DeleteMapping("/{id}")
     public void deleteOrder(@PathVariable Integer id) {
         orderService.deleteOrder(id);
+    }
+
+    // 取最後一筆
+    @GetMapping("/latest")
+    public Order getLatestOrder() {
+        // 假設 OrderService 有方法取得最新一筆
+        return orderService.getLatestOrder();
     }
 
 }
