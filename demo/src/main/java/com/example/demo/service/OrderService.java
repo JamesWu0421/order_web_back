@@ -50,4 +50,8 @@ public class OrderService {
         // findTopByOrderByIdDesc() 回傳 Optional<Order>
         return orderRepository.findTopByOrderByIdDesc().orElse(null);
     }
+
+    public List<Order> getOrdersByUserId(Integer userId) {
+        return orderRepository.findByUserId(userId);
+    }
 }

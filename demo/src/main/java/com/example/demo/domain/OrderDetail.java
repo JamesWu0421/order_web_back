@@ -12,7 +12,7 @@ public class OrderDetail {
 
     @ManyToOne
     @JoinColumn(name = "order_id", nullable = false)
-    private Order order; // ✅ 關聯 Order
+    private Order order; //  關聯 Order
 
     @Column(name = "seat_id", nullable = false)
     private Integer seatId;

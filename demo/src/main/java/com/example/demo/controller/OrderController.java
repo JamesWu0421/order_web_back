@@ -55,11 +55,17 @@ public class OrderController {
         orderService.deleteOrder(id);
     }
 
-    // 取最後一筆
+    // 取最新一筆
     @GetMapping("/latest")
     public Order getLatestOrder() {
-        // 假設 OrderService 有方法取得最新一筆
+
         return orderService.getLatestOrder();
+    }
+
+    //根據用戶ID查訂單
+    @GetMapping("/by-user/{userId}")
+    public List<Order> getOrdersByUserId(@PathVariable Integer userId) {
+        return orderService.getOrdersByUserId(userId);
     }
 
 }

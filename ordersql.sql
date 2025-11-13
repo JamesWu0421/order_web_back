@@ -60,3 +60,8 @@ CREATE TABLE customer_service_tickets (
     FOREIGN KEY (order_id) REFERENCES orders(id),
 --    FOREIGN KEY (handled_by) REFERENCES employees(id)
 );
+
+
+SELECT * FROM orders;
+
+SELECT * FROM order_details;
